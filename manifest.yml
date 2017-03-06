@@ -1,0 +1,13 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: WCS-WDS
+  host: WCS-WDS
+  disk_quota: 1024M
+  services:
+  - availability-monitoring-auto
+  - WCS-WDS-cloudantNoSQLDB
+  - Conversation-3d
+  - Discovery-6a
