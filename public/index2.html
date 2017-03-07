@@ -1,0 +1,86 @@
+<html>
+
+<head>
+
+<title>Spark Virtual Agent</title>
+
+<script language="javascript" type="text/javascript">
+function btntest_onclick() 
+{    
+    switchChat()
+   		
+    var doc =	document.getElementById('ibm_chat_root')
+    doc.style.width = '320px'
+    doc.style.height = '100%'
+}
+
+function switchChat()
+{
+	var doc = document.getElementById('ibm_chat_root_table')
+    if (doc.style.visibility == 'visible')
+    {
+    	doc.style.visibility = 'hidden'	
+    }
+   	else
+   		doc.style.visibility = 'visible'
+}
+</script>
+
+ </head>
+ 
+ <body>
+
+<div style="position:absolute;left:-250px;top:0px;">
+<img src="voda.png" />
+
+</div>
+
+<div style="position:fixed;right:2%;bottom:2%;"  onclick="btntest_onclick()">
+	<input id="btntest" value="Chatbot" type="image" src="watson.png"/>
+       <div style="position:relative;left:-25px;">Watson Chatbot</div>
+</div>
+
+<table bgcolor="#FFFFFF" style="position:fixed;right:0px;top:0px;height:100%" id="ibm_chat_root_table" cellpadding="0" cellspacing="0">
+<tr>
+<td align=left height="80">       
+<img src="chat.png" style="width:250px;height:80px" />
+</td>
+<td>
+<input value="Chatbot" type="image" src="close.png"  onclick="switchChat()"/>
+</td>
+</tr>
+<tr>
+<td>
+<div id="ibm_chat_root"  ></div>
+</td>
+</tr>
+</table>
+
+<script>
+ document.getElementById('ibm_chat_root_table').style.visibility = 'hidden'
+</script>
+
+<script src='https://dp1-bot-chat.mybluemix.net/IBMChatClient-v1.2.5.js'></script>
+<script>
+  IBMChat.init({
+    el: 'ibm_chat_root',
+    baseURL: 'https://api.ibm.com/virtualagent/run/api/v1',
+    botID: '7170fb80-dc0a-4e83-96a5-5cf5c9cccb13',
+    XIBMClientID: '7d117034-2dea-4530-9e18-9ccfb017dd21',
+    XIBMClientSecret: 'kQ8yU7cJ4cJ3oJ3oS7dR1rW3cP8tB0cJ3oU7vO3iR4bT6tL5pM',
+    
+    styles: {
+     background: 'rgba(255,255, 255, 1)',
+     text: 'rgba(0, 0, 0, 1)',
+     accentBackground: 'rgba(211, 45, 30, 1)',
+     accentText: 'rgba(255, 255, 255, 1.0)',
+     secondaryBackground: 'rgba(140, 57, 146, 1.0)',
+     secondaryText: 'rgba(255, 255, 255, 1)',
+     link: 'rgba(140, 57, 146, 1.0)'
+   }    
+  });
+</script>
+
+</body>
+
+</html>
